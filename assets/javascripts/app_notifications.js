@@ -41,6 +41,8 @@ $(document).ready(function()
         		link.remove();
 			}
         });
+		var countText = $("#notification_count").text() - 1;
+		$("#notification_count").replaceWith("<span id='notification_count'>" + countText + "</span>");
 		return false;
 	});
 
