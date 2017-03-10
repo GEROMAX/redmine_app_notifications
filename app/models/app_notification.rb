@@ -2,6 +2,7 @@ include GravatarHelper::PublicMethods
 include ERB::Util
 
 class AppNotification < ActiveRecord::Base
+	attr_accessible :journal_id, :issue_id, :author_id, :recipient_id, :viewed
 	belongs_to :recipient, :class_name => 'User', :foreign_key => 'recipient_id'
 	belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
 	belongs_to :issue
