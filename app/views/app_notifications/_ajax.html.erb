@@ -10,6 +10,12 @@
 		<% end %>
 	</div>
 	<div id="notificationsFooter">
+		<div />
+		<div>
 		<a href="<%= url_for( {:controller => "app_notifications", :action => "index"} )%>"><%= l(:see_all) %></a>
+	</div>
+		<div class="view-all-for-summary">
+			<a href="<%= url_for( {:controller => "app_notifications", :action => "view_all_for_summary"} )%>" onclick="$.ajax({type: 'GET', url: $(this).attr('href'), dataType: 'html', success: function() { $('#notificationsContainer').hide(); } }); $('#notification_count').text('0'); return false;"><%= l(:mark_all_as_seen) %></a>
+		</div>
 	</div>
 </div>

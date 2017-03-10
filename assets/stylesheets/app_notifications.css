@@ -46,6 +46,16 @@
 	font-size: 13px;
 	border-top: 1px solid #dddddd;
 }
+#notificationsFooter div {
+	width: 130px;
+	display: inline-block;
+}
+#notificationsFooter div.view-all-for-summary {
+	text-align: right;
+	vertical-align: bottom;
+	font-size: 9px;
+}
+
 #notification_count {
     background: none repeat scroll 0 0 #cc0000;
     border-radius: 9px;

@@ -51,4 +51,10 @@ class AppNotificationsController < ApplicationController
     AppNotification.where(:recipient_id => User.current.id, :viewed => false).update_all( :viewed => true )
     redirect_to :action => 'index'
   end
+
+  def view_all_for_summary
+    AppNotification.where(:recipient_id => User.current.id, :viewed => false).update_all( :viewed => true )
+    head :ok
+  end
+
 end
