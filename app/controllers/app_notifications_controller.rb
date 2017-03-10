@@ -1,7 +1,7 @@
 class AppNotificationsController < ApplicationController
   unloadable
-  # helper :app_notifications
-  # include AppNotificationsHelper
+   helper :custom_fields
+   helper :issues
 
   def index
     @app_notifications = AppNotification.includes(:issue, :author, :journal).where(recipient_id: User.current.id).order("created_on desc")
@@ -34,7 +34,7 @@ class AppNotificationsController < ApplicationController
   def view
     @notification = AppNotification.find(params[:id])
     if @notification.recipient == User.current 
-      AppNotification.update(@notification, :viewed => true)
+      AppNotification.find(params[:id]).update( :viewed => true )
       if request.xhr?
         if @notification.is_edited?
           render :partial => 'issues/issue_edit', :formats => [:html], :locals => { :notification => @notification, :journal => @notification.journal }
