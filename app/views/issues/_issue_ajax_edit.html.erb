@@ -9,6 +9,7 @@
 			<% journal_details.each do |string| %>
 			<div><%= string %></div>
 			<% end %>
+			<div><%= textilizable(notification.journal, :notes) %></div>
 		</div>
 		<div class="notification-date"><%= format_time(notification.created_on) %></div>
 	</div>

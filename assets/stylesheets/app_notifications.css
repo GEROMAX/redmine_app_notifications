@@ -114,6 +114,10 @@
 	font-size: 11px;
 	padding-left: 10px;
 }
+.notification-content img {
+	max-width: 200px;
+	max-height: 100px;
+}
 
 a.view-notification {
 	float: right;
